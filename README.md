@@ -71,12 +71,14 @@ Clone the repository:
 git clone https://github.com/your-username/password-analyzer.git
 
 cd password-analyzer
+
+cd src
 ```
 
 Run:
 
 ```bash
-python passwd_checker.py
+python main.py
 ```
 
 No external dependencies are required.
