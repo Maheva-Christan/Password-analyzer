@@ -68,7 +68,7 @@ The estimation are theoretical as the entropy and the penalisation. Then the mea
 Clone the repository:
 
 ```bash
-git clone https://github.com/your-username/password-analyzer.git
+git clone https://github.com/Maheva-Christan/password-analyzer.git
 
 cd password-analyzer
 
