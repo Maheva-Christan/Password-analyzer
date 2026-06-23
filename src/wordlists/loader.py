@@ -7,7 +7,7 @@ def load_wordlist(path):
 
     try: #open normally the file
         with open(path, "r", encoding="utf-8") as file:
-            words = {line.strip().casefold() for line in file if line.strip()}
+            words = {line.strip() for line in file if line.strip()}
     
     except UnicodeDecodeError: #if utf-8 can't load the file
         with open(path, "r", encoding="latin-1") as file:
