@@ -18,12 +18,13 @@ def load_wordlist(path):
 def load_common_words():
     """Load content of common words in a set"""
 
-    if os.path.exists("../data/common_words.txt"):
-        with open("../data/common_words.txt", "r") as c_file:
+    if os.path.exists("data/common_words.txt"):
+        with open("data/common_words.txt", "r") as c_file:
             common_words = set(c_file.read().splitlines())
     
     else:
-        print("Some file is missing or have been removed/displaced")
+        print("Some file is missing or have been removed/displaced, quitting...")
+        print("Thanks for using this program")
         sys.exit(0)
     
     return common_words

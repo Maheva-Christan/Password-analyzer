@@ -1,13 +1,9 @@
 
 import os
 import sys
-
-from wordlists.loader import load_wordlist, load_user_file, load_common_words
-from wordlists.formatter import wordlist_lower_case, remove_spaces
-from analyzer.checker import check_wordlist
-from analyzer.analyze_password import analyze_password
-from analyzer.bruteforce import estimate_bruteforce
-from ui.display import evaluate_strength, reasoning
+from src.wordlists import load_wordlist, load_user_file, load_common_words, wordlist_lower_case, remove_spaces
+from src.analyzer import check_wordlist, analyze_password, estimate_bruteforce
+from src.ui import evaluate_strength, reasoning
     
 
 def main(words):
@@ -51,7 +47,7 @@ def main(words):
 
             password = input("\033[34m" + prompt + "\033[0m")
 
-            if not password or password == " "*len(password):
+            if not password or password.strip() == "":
                 print("\033[33mpassword cannot be empty\033[0m")
                 continue
 
@@ -91,7 +87,7 @@ def main(words):
 
 if __name__ == "__main__":
 
-    default_path = "../data/darkc0de.txt"
+    default_path = "data/darkc0de.txt"
 
     print("WELCOME! This program will check your password strength and will estimate the time to crack it.\n")
     
@@ -120,6 +116,7 @@ if __name__ == "__main__":
             words = load_user_file()
 
     else:
+        print("Thanks for using this program")
         sys.exit(0)
 
     main(words)

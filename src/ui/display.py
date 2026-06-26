@@ -1,7 +1,7 @@
 
 import re
-
 from .progress_bar import display_progress_bar
+
 
 def evaluate_strength(analysis):
     """To evaluate the strength of the password and give the verdict"""
@@ -27,6 +27,7 @@ def evaluate_strength(analysis):
         print("Verdict: EXCELLENT")
     
     display_progress_bar(analysis)
+
 
 def reasoning(analysis):
     """To give the reasons of the verdict"""
@@ -56,7 +57,6 @@ def reasoning(analysis):
     elif re.match(r"^[a-zA-Z]+$", analysis["password"]): #if a password contains only characters
         print("\t- Your password contains only characters")
         indication = 1
-    
 
     if analysis["length"] < 8: #if a password is too short
         print("\t- Your password is too short")
@@ -65,7 +65,6 @@ def reasoning(analysis):
     if re.search(r"(.{3,})\1", analysis["password"]) or re.search(r"(.)\1{3,}", analysis["password"]): #if the password contains repetition
         print("\t- Your password contains repetition")
         indication = 1
-    
 
     if analysis["contains_common_words"][0]: #if the password contains a common word
         common_words = ""

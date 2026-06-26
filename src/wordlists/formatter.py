@@ -12,7 +12,7 @@ def wordlist_lower_case(words):
 
 
 def remove_spaces(password, display):
-    """To remove space between anr around the password entered by the users"""
+    """To remove space between and around the password entered by the users"""
 
     if re.search(r"\s", password):
         new_password = "".join(password.split())

@@ -15,7 +15,7 @@ def analyze_password(password, words, common_words, sensitive):
         if word.casefold() in password.casefold():
             contains_common_words[0] = True
             contains_common_words[1].append(word.casefold())
-    
+
     if contains_common_words[0]:
         l_string = contains_common_words[1][0]
         u_common_words = []
