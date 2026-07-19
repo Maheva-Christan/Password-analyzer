@@ -80,7 +80,9 @@ def reasoning(analysis):
     if analysis["palindrome"] and (len(password) < 10 or password.isalpha()):
         print("\t- Your password is a weak palindrome")
         indication = 1
-
+    
+    if len(password) > 6 and (len(re.findall(r"^[0-9]$", password)) <= 2 or len(re.findall(r"^[A-Z]$", password)) <= 2 or len(re.findall(r"^[a-z]$", password)) <= 2):
+        indication = 1
 
     if (len(re.findall(r"[a-z]", analysis["password"])) >= 3 and len(re.findall(r"[A-Z]", analysis["password"])) >= 3 and len(re.findall(r"[0-9]", analysis["password"])) >= 2 and len(re.findall(r"[^a-zA-Z0-9]", analysis["password"])) >= 2 and analysis["length"] >= 10 and not analysis["in_wordlist"]) or not bool(indication): #Case of a strong password
         print("\nREMARK:")

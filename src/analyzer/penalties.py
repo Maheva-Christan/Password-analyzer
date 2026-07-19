@@ -45,6 +45,9 @@ def final_evaluation(words, common_words, password, sensitive):
     
     if re.match(r"^[0-9]+$", password):
         penalty *= 0.3
+        
+    if len(password) > 6 and (len(re.findall(r"^[0-9]$", password)) <= 2 or len(re.findall(r"^[A-Z]$", password)) <= 2 or len(re.findall(r"^[a-z]$", password)) <= 2):
+        penalty *= 0.5
     
     security_strength = entropy * penalty
     
