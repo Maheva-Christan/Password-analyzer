@@ -131,7 +131,7 @@ password-analyzer/
 Clone the repository:
 
 ```bash
-git clone https://github.com/Maheva-Christan/password-analyzer.git
+git clone https://github.com/M-Christan/password-analyzer.git
 ```
 
 Move to the directory
